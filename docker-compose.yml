@@ -1,10 +1,10 @@
 version: "3"
 
-# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
 services:
 
 ################################## pihole -> Werbeblocker
-  pihole:
+# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+pihole:
     container_name: pihole
     image: pihole/pihole:latest
     ports:
@@ -91,7 +91,7 @@ services:
   ################################## heimdall -> Web Interface Manager
   heimdall:
     container_name: heimdall
-    image: linuxserver/heimdall
+    image: linuxserver/heimdall:latest
     environment:
       - PUID=1000
       - PGID=1000
