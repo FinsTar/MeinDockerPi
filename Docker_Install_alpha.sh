@@ -5,6 +5,4 @@ sudo sh get-docker.sh
 
 sudo usermod -aG docker pi
 
-pip install docker-compose
-
 sudo reboot
