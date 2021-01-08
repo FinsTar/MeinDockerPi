@@ -15,7 +15,7 @@ pihole:
       - "443:443/tcp"
     environment:
       TZ: 'Europe/Berlin'
-      WEBPASSWORD: 'bgrWC7CwDQmyQ],^UEeepNqdmupvU2ar;vHZ9hnV7bC'
+      WEBPASSWORD: 'SUPERGEHEIMESPASSWORD'
       DNS1: '9.9.9.9'
       DNS2: '149.112.112.112'
       IPv6: 'true'
@@ -43,11 +43,11 @@ pihole:
       environment:
         - TZ='Europe/Berlin'
         - WATCHTOWER_NOTIFICATIONS=email
-        - WATCHTOWER_NOTIFICATION_EMAIL_FROM=glados@******.de
-        - WATCHTOWER_NOTIFICATION_EMAIL_TO=mail@mail.com
-        - WATCHTOWER_NOTIFICATION_EMAIL_SERVER=sslout.de
-        - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER=mail@mail.de
-        - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD="password"
+        - WATCHTOWER_NOTIFICATION_EMAIL_FROM=<"EMAIL_FROM">
+        - WATCHTOWER_NOTIFICATION_EMAIL_TO=<"EMAIL_TO">
+        - WATCHTOWER_NOTIFICATION_EMAIL_SERVER=<"EMAIL_SERVER">
+        - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER=<"SERVER_USER">
+        - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD=<"SUPERGEHEIMESPASSWORD">
         - WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT=587
       volumes:
         - /var/run/docker.sock:/var/run/docker.sock
