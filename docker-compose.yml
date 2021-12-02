@@ -36,8 +36,7 @@ pihole:
     restart: unless-stopped
     hostname: pi.hole
 ################################## watchtower -> Docker auto updater
-
-  watchtower:
+watchtower:
       container_name: watchtower
       image: containrrr/watchtower
       command: --schedule '0 0 0 * * *' --cleanup true watchtower pihole unifi-controller heimdall homebridge
@@ -55,7 +54,7 @@ pihole:
       restart: always
 
 ################################## homebridge 
-  homebridge:
+homebridge:
     image: oznu/homebridge:raspberry-pi
     restart: always
     network_mode: host
@@ -68,7 +67,7 @@ pihole:
       - HOMEBRIDGE_CONFIG_UI_PORT=8081
 
 ################################## unifi-controller
-  unifi-controller:
+unifi-controller:
     image: ghcr.io/linuxserver/unifi-controller:latest
     container_name: unifi-controller
     environment:
@@ -89,7 +88,7 @@ pihole:
       - 5514:5514 #optional
     restart: unless-stopped
 
-  ################################## heimdall -> Web Interface Manager
+################################## heimdall -> Web Interface Manager
   heimdall:
     container_name: heimdall
     image: linuxserver/heimdall:latest
