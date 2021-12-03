@@ -1,11 +1,10 @@
----
 version: "3"
 
 services:
 
 ################################## pihole -> Werbeblocker
 # More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
-pihole:
+  pihole:
     container_name: pihole
     image: pihole/pihole:latest
     ports:
@@ -36,7 +35,7 @@ pihole:
     restart: unless-stopped
     hostname: pi.hole
 ################################## watchtower -> Docker auto updater
-watchtower:
+  watchtower:
       container_name: watchtower
       image: containrrr/watchtower
       command: --schedule '0 0 0 * * *' --cleanup true watchtower pihole unifi-controller heimdall homebridge
@@ -53,8 +52,8 @@ watchtower:
         - /var/run/docker.sock:/var/run/docker.sock
       restart: always
 
-################################## homebridge 
-homebridge:
+################################## homebridge
+  homebridge:
     image: oznu/homebridge:raspberry-pi
     restart: always
     network_mode: host
@@ -67,7 +66,7 @@ homebridge:
       - HOMEBRIDGE_CONFIG_UI_PORT=8081
 
 ################################## unifi-controller
-unifi-controller:
+  unifi-controller:
     image: ghcr.io/linuxserver/unifi-controller:latest
     container_name: unifi-controller
     environment:
