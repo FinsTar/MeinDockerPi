@@ -10,14 +10,12 @@ services:
     ports:
       - "53:53/tcp"
       - "53:53/udp"
-      - "67:67/udp"
       - "80:80/tcp"
       - "443:443/tcp"
     environment:
       TZ: 'Europe/Berlin'
       WEBPASSWORD: 'SUPERGEHEIMESPASSWORD'
-      DNS1: '9.9.9.9'
-      DNS2: '149.112.112.112'
+      PIHOLE_DNS_: '9.9.9.9;149.112.112.112;2620:fe::fe;2620:fe::9;1.1.1.1;1.0.0.1;2606:4700:4700::1111;2606:4700:4700::1001'
       IPv6: 'true'
     #ServerIP: --net=host mode requires
     # Volumes store your data between container upgrades
