@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 version: "3.3"
 
-=======
->>>>>>> refs/remotes/origin/main
 services:
 
 ################################## pihole -> Werbeblocker
@@ -90,7 +87,6 @@ services:
       - 444:443
     restart: unless-stopped
 
-<<<<<<< HEAD
 ################################# homepage -> Web Interface Manager
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
@@ -105,8 +101,6 @@ services:
       PUID: $PUID # read them from .env
       PGID: $PGID # read them from .env
     restart: unless-stopped
-=======
->>>>>>> refs/remotes/origin/main
 ################################# MeTube YT-DL -> Webinterface
   metube:
     image: ghcr.io/alexta69/metube
@@ -115,11 +109,7 @@ services:
     ports:
       - "8081:8081"
     volumes:
-<<<<<<< HEAD
-      - /home/fins/metube:/downloads
-=======
       - /mnt/dockerconf/metube/downloads:/downloads
->>>>>>> refs/remotes/origin/main
     
 ################################# Uptime Kuma -> Uptime Monitor
   uptime-kuma:
@@ -131,8 +121,6 @@ services:
       - 3001:3001
     restart: unless-stopped
     security_opt:
-<<<<<<< HEAD
       - no-new-privileges:true
-=======
-      - no-new-privileges:true
->>>>>>> refs/remotes/origin/main
+
+
